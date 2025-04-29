@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.laba4.ui.fragments.HomeFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.laba4.ui.fragments.CategoryFragment"
+        android:label="Категория"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="category"
+            app:argType="com.example.laba4.data.Category" />
+        <action
+            android:id="@+id/action_categoryFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.laba4.ui.fragments.DetailFragment"
+        android:label="Детали"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="placeId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
